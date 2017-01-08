@@ -45,6 +45,32 @@ char* my_strchr(const char* str, int ch) {
 	return NULL;
 }
 
+//implementing strstr() function
+//a function to check for a string in a string
+//returns a pointer to where the string needle is present in the string haystack
+
+char* my_strstr(const char* haystack, const char* needle) {
+	if(haystack == NULL || needle == NULL) {
+		return NULL;
+	}
+
+	while (*haystack != '\0') {
+		if(*haystack == *needle) {
+			const char* h = haystack;
+			const char* n = needle;
+			while(*n != '\0' && *h == *n) {
+				h++;
+				n++;
+			}
+			if (*n == '\0') {
+				return (char*) haystack;
+			}
+		}
+		haystack ++;
+	}
+	return NULL;
+}
+
 
 
 
