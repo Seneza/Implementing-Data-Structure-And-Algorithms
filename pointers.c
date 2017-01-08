@@ -6,6 +6,8 @@
 //  Copyright © 2017 GastonSeneza. All rights reserved.
 //
 
+//working with Pointers 
+
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
@@ -17,7 +19,7 @@ int main(int argc, const char * argv[]) {
     
     // Pointers: Type of pointers depend on what they point to
     int *radiusPointer = &radius;
-    int *otherRadiusPointer;
+    int *otherRadiusPointer; // declaring pointers
     otherRadiusPointer = radiusPointer;
     int r = *radiusPointer;
     printf("r = %d\n", r);
@@ -40,7 +42,7 @@ int main(int argc, const char * argv[]) {
     float *rayonPtr = &rayon;
     float *anotherRayonPtr = rayonPtr;
     
-    printf("%.2f\n" , *rayonPtr);
-    printf("%.2f\n", *&rayon);
+    printf("%.2f\n" , *rayonPtr);//dereferencing a pointer
+    printf("%.2f\n", *&rayon);// referencing and dereferencing a pointer(Read from right to left)
     return 0;
 }
