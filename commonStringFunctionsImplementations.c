@@ -75,24 +75,24 @@ char* my_strstr(const char* haystack, const char* needle) {
 //implementing strcmp() from scratch
 //Compares two strings' length
 int my_strcmp(const char* str1, const char* str2) {
-    if (str1 == NULL && str2 == NULL) {
+    if (str1 == NULL && str2 == NULL) { // handle null input corner cases
         return 0;
     }
     if (str1 == NULL) {
-        return 0 - *str2;
+        return 0 - *str2;//if str1 is NULL, then consider it smaller than str2
     }
     if (str2 == NULL ) {
-        return *str1;
+        return *str1;//if str2 is NULL then consider it smaller than str1
     }
     
     const char* ch1 = str1;
     const char* ch2 = str2;
     
     while(*ch1 != '\0' && *ch2 != '\0') {
-        if(*ch1 != *ch2) {
+        if(*ch1 != *ch2) {//simply subtract the ASCII codes of the letters at which the mismatch occurs.
             return *ch1 - *ch2;
         }
-        ch1 ++;
+        ch1 ++;//increament both pointers
         ch2++;
     }
     if (*ch1 == '\0' && *ch2 != '\0') {
